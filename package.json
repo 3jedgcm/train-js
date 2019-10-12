@@ -1,0 +1,27 @@
+{
+  "name": "slurp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc && node ./build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "@types/clear": "^0.1.0",
+    "@types/node": "^12.7.10",
+    "clear": "^0.1.0",
+    "node-fetch": "^2.6.0",
+    "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "nodemon": "^1.19.1"
+  }
+}
