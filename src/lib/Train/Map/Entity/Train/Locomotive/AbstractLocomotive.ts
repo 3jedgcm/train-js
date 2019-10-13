@@ -1,8 +1,8 @@
 import AbstractTrain from "../AbstractTrain";
-import Position from "../../Util/Position";
-import World from "../../Map/World";
-import Rail from "../../Map/Cell/Rail/Rail";
-import Mirror from "../../Util/Mirror";
+import Position from "../../../../Util/Position";
+import World from "../../../World";
+import Rail from "../../../Cell/Rail/AbstractRail";
+import Mirror from "../../../../Util/Mirror";
 
 const MAX_LEVEL = 5
 const MIN_LEVEL = 0
@@ -15,14 +15,14 @@ class AbstractLocomotive extends AbstractTrain {
     private traveling: number
     private intEngine: NodeJS.Timeout | undefined
 
-    constructor(world: World, model: String, id: Number, start: Position) {
-        super(world, model, id, start)
+    constructor(model: String, trainId: Number) {
+        super(model, trainId)
         this.stateEngine = false
         this.speedLevel = 0
         this.traveling = 0
         this.intEngine = undefined
-        let tempCell = <Rail>this.world.getCell(this.position)
-        tempCell.setOccupant(this)
+        //let tempCell = <Rail>this.world.getCell(this.position)
+        //tempCell.setOccupant(this)
     }
 
     public toggleStateEngine() {
@@ -53,20 +53,13 @@ class AbstractLocomotive extends AbstractTrain {
     private cross(speed: number) {
         this.traveling = this.traveling + speed
         if (this.traveling >= MAX_TRAVEL) {
-            this.travel()
+            this.travelFunction(this)
             this.traveling = this.traveling - MAX_TRAVEL
         }
-        //console.log(this.position.toString() + " vitesse->" + speed + " " + this.traveling + "/10" )
     }
 
-    private travel() {
-        let tempCell = <Rail>this.world.getCell(this.position)
-        tempCell.unsetOccupant()
-        if (tempCell) {
-            this.position = Mirror.getMirror(this.position, tempCell.getNextPoint(this.position.getPoint()))
-            tempCell = <Rail>this.world.getCell(this.position)
-            tempCell.setOccupant(this)
-        }
+    public toString() {
+        return 'Train ' + this.model + ' ' + this.trainId + ' ' + this.speedLevel + ' ' + this.traveling + ' '
     }
 
 }

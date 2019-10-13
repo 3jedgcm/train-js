@@ -1,17 +1,16 @@
-import Rail from '../../Rail'
+import Rail from "../../AbstractRail"
 
 class StraightReverse extends Rail {
 
     constructor() {
-        let links = new Array(
-            {in:'LEFT',out:'RIGHT'},
-            {in:'RIGHT',out:'LEFT'}
-        )
-        super(links)
+        super(new Array(
+            {in:"LEFT",out:"RIGHT"},
+            {in:"RIGHT",out:"LEFT"}
+        ))
     }
 
     toString() {
-        return '━'
+        return "━"
     }
     
 }

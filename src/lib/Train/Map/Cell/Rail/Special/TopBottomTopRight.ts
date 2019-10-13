@@ -3,7 +3,7 @@ import AbstractSpecial from './AbstractSpecial'
 class TopBottomTopRight extends AbstractSpecial {
 
     constructor() {
-        let links = new Array(
+        super(new Array(
             {
                 id: 1,
                 on: { in: 'TOP', out: 'BOTTOM' },
@@ -11,8 +11,7 @@ class TopBottomTopRight extends AbstractSpecial {
             },
             { in: 'RIGHT', out: 'TOP' },
             { in: 'BOTTOM', out: 'TOP' }
-        )
-        super(links)
+        ))
     }
 
     toString() {

@@ -1,17 +1,16 @@
-import Rail from '../../Rail'
+import Rail from "../../AbstractRail"
 
 class CornerLeftBottom extends Rail {
 
     constructor() {
-        let links = new Array(
-            {in:'LEFT',out:'BOTTOM'},
-            {in:'BOTTOM',out:'LEFT'}
-        )
-        super(links)
+        super(new Array(
+            {in:"LEFT",out:"BOTTOM"},
+            {in:"BOTTOM",out:"LEFT"}
+        ))
     }
 
     toString() {
-        return '┓'
+        return "┓"
     }
 
 }

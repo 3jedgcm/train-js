@@ -1,29 +1,19 @@
-import Rail from '../Rail'
-
-interface Link {
-    out: String,
-    in: String
-}
-
-interface ConditionalLink {
-    id: Number,
-    on: Link,
-    off: Link
-}
+import Rail from '../AbstractRail'
+import * as Type from '../../../../Interface/Type'
 
 abstract class AbstractSpecial extends Rail {
 
 
     protected state: Map<Number, Boolean>
 
-    constructor(links: Array<Link | ConditionalLink>) {
+    constructor(links: Array<Type.Link | Type.ConditionalLink>) {
         super(links)
         this.state = new Map()
     }
 
     public toggleState(id: Number) {
         this.links.forEach(it => {
-            let temp = <ConditionalLink>it
+            let temp = <Type.ConditionalLink>it
             if (temp.id == id) {
                 if(this.state.has(id)) {
                     let last = this.state.get(id)
@@ -36,11 +26,11 @@ abstract class AbstractSpecial extends Rail {
     }
 
     //Overide for special Rail
-    public getNextPoint(point: String) {
-        let find : Link = {in:'', out:''}
+    public getNextPoint(point: Type.Extremity) {
+        let find : Type.Link = {in:"TOP", out:"TOP"}
         this.links.forEach(it => {
-            let temp = <Link>it
-            let temp2 = <ConditionalLink>it
+            let temp = <Type.Link>it
+            let temp2 = <Type.ConditionalLink>it
             if(temp.in == point) {
                 find = temp
             }
@@ -53,11 +43,9 @@ abstract class AbstractSpecial extends Rail {
             } else {
                 if(temp2.off) {
                     find = temp2.off
-                }   
-                
+                }
             }
         })
-        this.toggleState(1)
         return find.out
     }
 

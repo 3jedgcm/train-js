@@ -1,9 +1,13 @@
-import CellAbstract from '../CellAbstract'
+import AbstractCell from '../AbstractCell'
 
-class Grass extends CellAbstract {
+class Grass extends AbstractCell {
 
     constructor() {
-        super(false)
+        super('VOID')
+    }
+
+    toString() {
+        return ' '
     }
 
 }

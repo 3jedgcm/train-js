@@ -1,17 +1,16 @@
-import Rail from '../../Rail'
+import Rail from "../../AbstractRail"
 
 class StraightTopBottom extends Rail {
 
     constructor() {
-        let links = new Array(
-            {in:'TOP',out:'BOTTOM'},
-            {in:'BOTTOM',out:'TOP'}
-        )
-        super(links)
+        super(new Array(
+            {in:"TOP",out:"BOTTOM"},
+            {in:"BOTTOM",out:"TOP"}
+        ))
     }
 
     toString() {
-        return '┃'
+        return "┃"
     }
 
 }

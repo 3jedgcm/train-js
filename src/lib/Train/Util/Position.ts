@@ -1,13 +1,13 @@
+import * as Type from '../Interface/Type'
+
 class Position {
 
     private x: number
     private y: number
-    private point: String
 
-    constructor(x: number, y: number, point: String) {
+    constructor(x: number, y: number) {
         this.x = x
         this.y = y
-        this.point = point
     }
 
     getX() {
@@ -16,10 +16,6 @@ class Position {
 
     getY() {
         return this.y
-    }
-
-    getPoint() {
-        return this.point
     }
 
     toString() {

@@ -1,5 +1,6 @@
 import Train from './lib/Train/index'
 import Position from './lib/Train/Util/Position'
+import Clear from 'clear'
 
 const matrix = {
     height: 8,
@@ -74,11 +75,13 @@ const matrix = {
 
 
 const world = new Train.World(matrix)
-const train = new Train.Train.Ter(world, 17000, new Position(0, 0, 'BOTTOM'))
+const train = new Train.Train.Ter(17001)
+world.setEntity(train, new Position(0,0),'RIGHT')
+
+setInterval(() => {
+    Clear()
+    world.display()
+},200)
 
 
 train.toggleStateEngine()
-train.accelerate()
-train.accelerate()
-
-
