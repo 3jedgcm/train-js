@@ -3,7 +3,7 @@ import AbstractCell from '../AbstractCell'
 class Grass extends AbstractCell {
 
     constructor() {
-        super('VOID')
+        super('VOID','GRASS')
     }
 
     toString() {

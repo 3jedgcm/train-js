@@ -1,23 +1,23 @@
 import AbstractSpecial from './AbstractSpecial'
 
-class LeftBottomLeftRight extends AbstractSpecial {
+class LeftTopLeftRight extends AbstractSpecial {
 
     constructor() {
         super(new Array(
             {
                 id: 1,
-                on: { in: 'LEFT', out: 'BOTTOM' },
+                on: { in: 'LEFT', out: 'TOP' },
                 off: { in: 'LEFT', out: 'RIGHT' },
             },
-            { in: 'BOTTOM', out: 'LEFT' },
+            { in: 'TOP', out: 'LEFT' },
             { in: 'RIGHT', out: 'LEFT' }
-        ))
+        ),'RAIL_LEFT_TOP_LEFT_RIGHT')
     }
 
     toString() {
-        return '┳'
+        return '┻'
     }
 
 }
 
-export default LeftBottomLeftRight
+export default LeftTopLeftRight

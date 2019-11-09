@@ -6,7 +6,7 @@ class StraightTopBottom extends Rail {
         super(new Array(
             {in:"TOP",out:"BOTTOM"},
             {in:"BOTTOM",out:"TOP"}
-        ))
+        ), 'RAIL_STRAIGHT_TOP_BOTTOM')
     }
 
     toString() {

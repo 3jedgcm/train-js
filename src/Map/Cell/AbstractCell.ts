@@ -7,10 +7,12 @@ abstract class AbstractCell {
     private type: Type.CellType
     private mapEntity: Map<String, Type.PackageEntity>
     public id: String
+    private texture : String
 
-    constructor(type: Type.CellType) {
+    constructor(type: Type.CellType,texture: String) {
         this.mapEntity = new Map()
         this.type = type
+        this.texture = texture
         this.id = UniqueID(type + "-")
     }
 
@@ -50,6 +52,10 @@ abstract class AbstractCell {
         } else {
             throw 'Unset entity'
         }
+    }
+
+    public getTexture() {
+        return this.texture
     }
 }
 

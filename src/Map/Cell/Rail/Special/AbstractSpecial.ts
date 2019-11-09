@@ -6,8 +6,8 @@ abstract class AbstractSpecial extends Rail {
 
     protected state: Map<Number, Boolean>
 
-    constructor(links: Array<Type.Link | Type.ConditionalLink>) {
-        super(links)
+    constructor(links: Array<Type.Link | Type.ConditionalLink>,texture: String) {
+        super(links,texture)
         this.state = new Map()
     }
 

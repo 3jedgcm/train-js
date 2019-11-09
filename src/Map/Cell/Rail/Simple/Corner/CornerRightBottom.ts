@@ -6,7 +6,7 @@ class CornerRightBottom extends Rail {
         super(new Array(
             {in:"RIGHT",out:"BOTTOM"},
             {in:"BOTTOM",out:"RIGHT"}
-        ))
+        ), 'RAIL_CORNER_RIGHT_BOTTOM')
     }
 
     toString() {

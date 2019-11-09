@@ -7,8 +7,8 @@ abstract class AbstractRail extends AbstractCell {
     protected links: Array<Type.Link | Type.ConditionalLink>
     private onEnterFunc: Function
     private onOutFunc: Function
-    constructor(links: Array<Type.Link | Type.ConditionalLink>) {
-        super('RAIL')
+    constructor(links: Array<Type.Link | Type.ConditionalLink>,texture: String) {
+        super('RAIL',texture)
         this.links = links
         this.onEnterFunc = () => { }
         this.onOutFunc = () => { }
